@@ -1,3 +1,3 @@
-apt-get install pkg-config 
-apt-get install libcairo2-dev
+apt install pkg-config 
+apt install libcairo2-dev
 pip install -r requirements.txt
