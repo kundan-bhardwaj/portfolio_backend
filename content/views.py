@@ -1,4 +1,5 @@
 
+from weakref import ref
 from rest_framework.decorators import api_view,permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -11,20 +12,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 
-# @api_view(['GET'])
-# def slips(request):
-#     if request.method == 'GET':
-#         data = slip.objects.all()
-#         serializer = slipserializer(data,many = True)
-#         return Response(serializer.data)
-
-# @api_view(['GET'])
-# def packages(request):
-#     if request.method == 'GET':
-#         data = package.objects.all()
-#         serializer = packageserializer(data,many = True)
-#         return Response(serializer.data)
-    
+   
 @api_view(['POST'])
 def register(request):
     if request.method == 'POST':
@@ -72,16 +60,16 @@ def tech(request):
         serializer = technologyserializer(tech,many = True)
         return Response(serializer.data)
 
-@api_view(['GET','POST'])
-@permission_classes((IsAuthenticated,))
-def placeorder(request):
+@api_view(['POST'])
+def orders(request):
     if request.method == 'POST':
-        usr = request.user
-        print(usr)
-        data = request.body.decode('utf-8')
-        ref_data = json.loads(data)
-        # order.objects.create(timeframe = ref_data['time'],goals = ref_data['goals'],questions = ref_data['questions'],audience = ref_data['audience'],status = 'initiated')
-        return Response('package oredered succesfully')
+        if request.user.is_authenticated == True:
+            data = request.body.decode('utf-8')
+            ref_data = json.loads(data)
+            order.objects.create(timeline = ref_data['timeline'],objectives = ref_data['objectives'],questions = ref_data['questions'],audience = ref_data['audience'])
+            return Response('package oredered succesfully')
+        else:
+            return Response('auth')
 
 @api_view(['POST'])
 def mail(request):

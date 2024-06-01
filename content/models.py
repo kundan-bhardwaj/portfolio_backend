@@ -34,9 +34,12 @@ class project(models.Model):
     discription = models.CharField(max_length=10000)
     tech = models.CharField(max_length=300)
 
-# class order(models.Model):
-#     ID = models.CharField(max_length=300)
-#     discription = models.CharField(max_length=3000)
+class order(models.Model):
+     id = models.AutoField(primary_key=True)
+     timeline = models.CharField(max_length=300)
+     objectives = models.CharField(max_length=3000)
+     questions = models.CharField(max_length=3000)
+     audience = models.CharField(max_length=3000)
 
 class doc(models.Model):
     doc_name = models.CharField(max_length=50)
