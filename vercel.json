@@ -1,14 +1,21 @@
-
 {
-  "builds": [{
-      "src": "portfolio_backend/wsgi.py",
-      "use": "@ardnt/vercel-python-wsgi",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
-  }],
-  "routes": [
+    "version": 2,
+    "builds": [
       {
-          "src": "/(.*)",
-          "dest": "portfolio_backend/wsgi.py"
+        "src": "test1/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
       }
-  ]
-}
+    ],
+    "routes": [
+      {
+        "src": "/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "test1/wsgi.py"
+      }
+    ],
+    "outputDirectory": "staticfiles"
+  }
