@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(99(c_vd*vs+j_%*&)il3+!&#mv!b=57cf468k!u8a*+v(q(gz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -66,7 +66,7 @@ MIDDLEWARE = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000','http://127.0.0.1:8000']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000','http://127.0.0.1:8000','https://portfolio-backend-virid-two.vercel.app/']
 CORS_ALLOW_CREDENTIALS = True
 SESSION_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SAMESITE = 'None'
@@ -99,15 +99,7 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'URl': 'postgres://default:C6NFG8JpEwsv@ep-shrill-hill-a4sb7cje-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
-        'NAME': 'verceldb',
-        'USER': 'default',
-        'PASSWORD': 'C6NFG8JpEwsv',
-        'HOST': 'ep-shrill-hill-a4sb7cje-pooler.us-east-1.aws.neon.tech',
-        'PORT': 5432
-    }
+    
 }
 
 
