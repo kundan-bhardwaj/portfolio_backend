@@ -99,10 +99,15 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'URl': 'postgres://default:C6NFG8JpEwsv@ep-shrill-hill-a4sb7cje-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'C6NFG8JpEwsv',
+        'HOST': 'ep-shrill-hill-a4sb7cje-pooler.us-east-1.aws.neon.tech',
+        'PORT': 5432
+    }
 }
 
 
