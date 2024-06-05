@@ -66,7 +66,7 @@ MIDDLEWARE = [
 ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000','http://127.0.0.1:8000','https://portfolio-backend-virid-two.vercel.app/']
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000','http://127.0.0.1:8000','https://portfolio-backend-one-xi.vercel.app']
 CORS_ALLOW_CREDENTIALS = True
 SESSION_COOKIE_SAMESITE = 'None'
 CSRF_COOKIE_SAMESITE = 'None'
