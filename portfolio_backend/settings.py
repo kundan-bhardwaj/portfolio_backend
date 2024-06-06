@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(99(c_vd*vs+j_%*&)il3+!&#mv!b=57cf468k!u8a*+v(q(gz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000','https://portfolio-backend-one-xi.vercel.app']
 
 
 # Application definition
