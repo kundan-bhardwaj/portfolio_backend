@@ -106,7 +106,7 @@ DATABASES = {
         'USER': 'default',
         'PASSWORD': 'C6NFG8JpEwsv',
         'HOST': 'ep-shrill-hill-a4sb7cje-pooler.us-east-1.aws.neon.tech',
-        'PORT': 5434
+        'PORT': 5432
     }
 }
 
